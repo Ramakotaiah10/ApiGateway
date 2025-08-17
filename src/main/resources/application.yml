@@ -1,17 +1,17 @@
 server:
-  port: 8080
+  port: ${SERVER_PORT:8080}
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/apigateway
-    username: postgres
-    password: root
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
-      ddl-auto: update   # validate/none recommended in production
-    show-sql: true
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update}
+    show-sql: ${SPRING_JPA_SHOW_SQL:true}
     properties:
       hibernate:
         format_sql: true
@@ -19,8 +19,8 @@ spring:
 # JWT security settings
 security:
   jwt:
-    secret: "change-this-secret-key-to-at-least-32-characters"
-    expiration-ms: 86400000   # 1 day
+    secret: ${JWT_SECRET:change-this-secret-key-to-at-least-32-characters}
+    expiration-ms: ${JWT_EXPIRATION:86400000}   # 1 day
 
 logging:
   level:
