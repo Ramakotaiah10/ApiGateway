@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/apigateway
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update   # validate/none recommended in production
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# JWT security settings
+security:
+  jwt:
+    secret: "change-this-secret-key-to-at-least-32-characters"
+    expiration-ms: 86400000   # 1 day
+
+logging:
+  level:
+    root: INFO
+    org.springframework.security: DEBUG
