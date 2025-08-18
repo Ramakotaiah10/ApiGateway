@@ -95,7 +95,7 @@ Run
 mvn spring-boot:run
 
 
-App starts at: http://localhost:8080
+App starts at: https://apigateway-xm21.onrender.com
 
 🔑 Authentication Flow
 
