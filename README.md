@@ -177,7 +177,6 @@ Save URLs
 
 Deployed to Render/Railway/Fly.io with PostgreSQL.
 
-CI/CD with .gitlab-ci.yml automates build and deployment.
 
 ✅ Checklist
 
